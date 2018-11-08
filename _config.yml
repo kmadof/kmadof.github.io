@@ -1,6 +1,7 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+remote_theme:     https://github.com/fongandrew/hydeout/
 
 # Setup
 title:            The Code Manual
