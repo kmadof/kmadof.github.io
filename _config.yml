@@ -4,9 +4,9 @@ highlighter:      rouge
 
 # Setup
 title:            The Code Manual
-tagline:          'A Jekyll theme'
-description:      '<a href="http://hyde.getpoole.com" target="_blank">Madej''s</a> thoughts about <a href="http://hyde.getpoole.com" target="_blank">code</a>.'
-url:              https://fongandrew.github.io
+tagline:          'Madej''s about coding'
+description:      '<a href="http://hyde.getpoole.com" target="_blank">Madej''s</a> thoughts about <a href="http://hyde.getpoole.com" target="_blank">coding</a>.'
+url:              https://kmadof.github.io
 baseurl:          '/hydeout'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
