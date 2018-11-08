@@ -5,10 +5,10 @@ remote_theme:     https://github.com/fongandrew/hydeout/
 
 # Setup
 title:            The Code Manual
-tagline:          'Madej''s about coding'
+tagline:          'Madej''s about thoughts coding'
 description:      '<a href="http://hyde.getpoole.com" target="_blank">Madej''s</a> thoughts about <a href="http://hyde.getpoole.com" target="_blank">coding</a>.'
 url:              https://kmadof.github.io
-baseurl:          '/hydeout'
+baseurl:          
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
                   # If you want to move just the blog index pages but keep
