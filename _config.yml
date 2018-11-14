@@ -16,12 +16,23 @@ baseurl:
                   # sidebar_blog_link below.
 
 author:
-  name:           'Andrew Fong'
-  url:            https://twitter.com/fongandrewc
+  name:           'Krzysztof Madej'
+  url:            https://twitter.com/kmadof
 
 paginate:         5
 # paginate_path:    '/page:num'
                     # Or '/blog/page:num' if you want to move your index pages
+
+hydeout:
+  repo:            https://github.com/kmadof
+
+linkedin:          https://www.linkedin.com/in/krzysztof-madej/
+
+# Google services
+google_analytics: UA-88818077-1
+
+disqus:
+  shortname: krzysztof_madej
 
 plugins:
   - jekyll-feed
