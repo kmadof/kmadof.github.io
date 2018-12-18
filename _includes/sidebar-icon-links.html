@@ -13,7 +13,7 @@
   {% endif %}
 
   {% if site.linkedin %}
-    <a id="github-link"
+    <a id="linkedin-link"
        class="icon" title="LinkedIn Profile" aria-label="LinkedIn Profile"
        href="{{ site.linkedin    }}">
       {% include svg/linkedin.svg %}
@@ -24,6 +24,19 @@
       {% include svg/download.svg %}
     </a> -->
   {% endif %}
+
+  {% if site.linkedin %}
+  <a id="twitter-link"
+     class="icon" title="Twitter Profile" aria-label="Twitter Profile"
+     href="{{ site.twitter_link }}">
+    {% include svg/twitter.svg %}
+  </a>
+  <!-- <a id="github-download-link"
+     class="icon" title="Download" aria-label="Download"
+     href="{{ site.hydeout.repo }}/archive/v{{ site.hydeout.version }}.zip">
+    {% include svg/download.svg %}
+  </a> -->
+{% endif %}
 
   <a id="subscribe-link"
      class="icon" title="Subscribe" aria-label="Subscribe"
@@ -53,14 +66,14 @@
     </a>
   {% endif %}
 
-  {% if search_page %}
+  <!-- {% if search_page %}
     <a id="search-link"
        class="icon{% if page.url == '/search' %} active{% endif %}"
        title="Search" aria-label="Search"
        href="{{ site.baseurl }}{{ search_page.url }}">
       {% include svg/search.svg %}
     </a>
-  {% endif %}
+  {% endif %} -->
 
   {% include custom-icon-links.html %}
 </nav>

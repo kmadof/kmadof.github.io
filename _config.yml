@@ -5,8 +5,8 @@ remote_theme:     https://github.com/fongandrew/hydeout/
 
 # Setup
 title:            The Code Manual
-tagline:          'Madej''s about thoughts coding'
-description:      '<a href="http://hyde.getpoole.com" target="_blank">Madej''s</a> thoughts about <a href="http://hyde.getpoole.com" target="_blank">coding</a>.'
+tagline:          'Madej''s thoughts not only about coding'
+description:      'Madej''s thoughts not only about coding'
 url:              https://kmadof.github.io
 baseurl:          
                   # the optional subpath of your site, e.g. "/blog"
@@ -27,6 +27,7 @@ hydeout:
   repo:            https://github.com/kmadof
 
 linkedin:          https://www.linkedin.com/in/krzysztof-madej/
+twitter_link:      https://twitter.com/kmadof
 
 # Google services
 google_analytics: UA-88818077-1
@@ -38,6 +39,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-twitter-plugin
 
 # Sidebar link settings
 sidebar_home_link:  true
