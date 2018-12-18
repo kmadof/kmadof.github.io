@@ -39,7 +39,9 @@ I'm a dev lead for more than one year and I'm still learning it. Honestly, I fee
 
 Among many things it is taking care of people's development, inspiring and motivating them and removing obstacles from their path. Obstacles like a meaningless meeting. And like Uncle Bob said:
 
-{% twitter https://twitter.com/unclebobmartin/status/1071048161098063872 %}
+<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Managers and leads, one of your high priority goals is to keep your people out of meetings.</p>&mdash; Uncle Bob Martin (@unclebobmartin) <a href="https://twitter.com/unclebobmartin/status/1071048161098063872?ref_src=twsrc%5Etfw">December 7, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 ### Quality is free, but
 
