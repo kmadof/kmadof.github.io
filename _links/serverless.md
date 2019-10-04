@@ -16,6 +16,6 @@ In this article, [Wisen Tanasa](https://www.thoughtworks.com/profiles/wisen-tana
 * Distributed
 * Event-driven
 
-The author secribes good and bad sides. It is quite balanced article.
+The author presents good and bad sides. It is quite balanced article.
 
 <hr>
