@@ -7,7 +7,7 @@ remote_theme:     https://github.com/fongandrew/hydeout/
 title:            The Code Manual
 tagline:          'Madej''s thoughts not only about coding'
 description:      'Madej''s thoughts not only about coding'
-url:              https://kmadof.github.io
+url:              https://thecodemanual.pl
 baseurl:          
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
