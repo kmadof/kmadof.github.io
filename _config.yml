@@ -33,7 +33,7 @@ twitter_link:      https://twitter.com/kmadof
 google_analytics: UA-88818077-1
 
 disqus:
-  shortname: krzysztof_madej
+  shortname: thecodemanual
 
 plugins:
   - jekyll-feed
