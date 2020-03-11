@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Caching (not only) NuGet packages on Azure Devops
+title: Caching (not only) NuGet packages on Azure DevOps
 date: 2020-03-11
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps
