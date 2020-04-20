@@ -170,7 +170,7 @@ steps:
 You may wonder how such simple change impacts on build performance ;) It took only 45 seconds.
 
 ### Summary
-In this post I presented two ways of building docker images. I will not point which is better. It all depends on your preferences. In addition ACR tasks have more capabilities than I presented here, but this is for a next post.
+In this post, I presented two ways of building docker images. I will not point which is better. It all depends on your preferences. Besides, ACR tasks have more capabilities than I presented here, but this is for the next post.
 
 #### Links
 
