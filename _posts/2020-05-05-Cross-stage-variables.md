@@ -74,3 +74,5 @@ Because this is not available for everyone yet.
 > These features will roll out over the next two to three weeks.
 
 But it will be soon. I hope that this will simplify your builds and your lifes :)
+
+As always you will find this code on my [github](https://github.com/kmadof/devops-manual/tree/master/cross-stage-variables).
