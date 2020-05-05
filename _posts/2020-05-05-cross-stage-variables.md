@@ -62,7 +62,7 @@ stages:
   jobs:
   - job: JB
     steps:
-    - bash: echo "Hello world stage B first job"
+    - bash: echo "Hello world stage B job JB"
 ```
 
 If you try to run this build you may still get an error:
