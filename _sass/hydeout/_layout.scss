@@ -245,6 +245,15 @@ body {
   flex-flow: column nowrap;
 }
 
+#sidebar-nav-so-flair {
+  flex-flow: column nowrap;
+  margin: 1rem 0 0 0;
+}
+
+#sidebar-nav-so-flair img {
+  margin: 0;
+}
+
 #sidebar-icon-links {
   max-width: 100%;
   flex-flow: row wrap;
