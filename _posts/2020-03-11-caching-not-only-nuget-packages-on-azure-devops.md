@@ -3,15 +3,19 @@ layout: post
 title: Caching (not only) NuGet packages on Azure DevOps
 date: 2020-03-11
 excerpt_separator:  <!--more-->
-tags: DevOps AzureDevOps
+tags: DevOps AzureDevOps nuget npm
 ---
+
+<div class="dark-message">
+  14/05/2020 - <a href="#caching-npm-packages">I added section about caching npm packages in Node.js/Angular project</a>
+</div>
 
 The goal of [Cache@2](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/cache?view=azure-devops) task is improving build performance by caching files between pipeline runs. It supports multiple types of packages like
 
 - Bundler gems
 - npm packages
 - Yarn packages
-- NuGet packages
+- [NuGet packages](#caching-npm-packages)
 - Maven artifacts
 - Gradle artifacts
 - ccache artifacts
@@ -202,7 +206,42 @@ In the next run, cache task gets a hit and download packages to the given folder
 Cache task set also variable CACHE_RESTORED to true which causes evaluating condition in next step as false. So we do not restore packages.
 
 
+## Caching npm packages
+
+Cache task allows caching not only NuGet packages but also npm modules. For this case I didn’t find any issue following documentation and thus adding that to your build is straightforward as this code snippet:
+
+```yaml
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+
+steps:
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | cache-npm/package-lock.json'
+    restoreKeys: |
+       npm | "$(Agent.OS)"
+    path: $(npm_config_cache)
+  displayName: Cache npm
+
+- script: npm ci
+  workingDirectory: '$(Build.SourcesDirectory)/cache-npm'
+```
+
+My angular project is located in the `cache-npm` subfolder and this is wahy I had to add this to `key` input in cache task and the `working directory` of script task.
+
+You may notice that we use `npm ci` command instead of typical `npm install`. There is a significant difference between these two. `npm install` asks bout each module from dependencies and then it upgrades or not. `npm ci` deletes all node_modules directory and copies them from the cache. Thus you should avoid caching npm_modules directory and cache folder cache itself as we did above. There are a few key information (please check [documentation](https://docs.npmjs.com/cli/ci.html)) which you should know before you will use `npm ci`:
+
+> - The project must have an existing **package-lock.json** or **npm-shrinkwrap.json.**
+- If dependencies in the package lock do not match those in **package.json**, `npm ci` will exit with an error, instead of updating the package lock.
+- `npm ci` can only install entire projects at a time: individual dependencies cannot be added with this command.
+- If a **node_modules** is already present, it will be automatically removed before npm ci begins its install.
+- It will never write to **package.json** or any of the package-locks: installs are essentially frozen.
+
+What is important to remember?! `npm ci` is meant to use in automated environments as CI builds. It may speed up your build but details strongly dependents on how many modules do you have in your dependencies. It is more strict than `npm install` and thus may help us keeping consistency in our code. But if you want to add/remove/change a module `npm install` is your choice.
+
+Code for that part you may find [here](https://github.com/kmadof/devops-manual/tree/master/cache-npm).
+
 ### Summary
 
-Cache task is very useful as it may reduce significantly network calls to get packages. I recommend to use it especially if you have many dependencies. I can only complain about documentation, as for me there were too many things not working as it is written there. Or maybe it is just me and I didn’t understand all the pieces. In that case, my apologies. But, also this part can be improved. The code for this you can find on [my github](https://github.com/kmadof/azure-devops-caching).
+Cache task is very useful as it may reduce significantly network calls to get packages. I recommend to use it especially if you have many dependencies. I can only complain about documentation, as for me there were too many things not working as it is written there. Or maybe it is just me and I didn’t understand all the pieces. In that case, my apologies. The code for this you can find on [my github](https://github.com/kmadof/azure-devops-caching).
 
