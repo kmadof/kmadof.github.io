@@ -7,7 +7,7 @@ tags: DevOps AzureDevOps nuget npm
 ---
 
 <div class="dark-message">
-  14/05/2020 - <a href="#caching-npm-packages">I added section about caching npm packages in Node.js/Angular project</a>
+  14/05/2020 - <a href="#caching-npm-modules">I added section about caching npm modules in Node.js/Angular project</a>
 </div>
 
 The goal of [Cache@2](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/cache?view=azure-devops) task is improving build performance by caching files between pipeline runs. It supports multiple types of packages like
@@ -15,7 +15,7 @@ The goal of [Cache@2](https://docs.microsoft.com/en-us/azure/devops/pipelines/ta
 - Bundler gems
 - npm packages
 - Yarn packages
-- [NuGet packages](#caching-npm-packages)
+- [NuGet packages](#caching-npm-modules)
 - Maven artifacts
 - Gradle artifacts
 - ccache artifacts
@@ -206,7 +206,7 @@ In the next run, cache task gets a hit and download packages to the given folder
 Cache task set also variable CACHE_RESTORED to true which causes evaluating condition in next step as false. So we do not restore packages.
 
 
-## Caching npm packages
+## Caching npm modules
 
 Cache task allows caching not only NuGet packages but also npm modules. For this case I didn’t find any issue following documentation and thus adding that to your build is straightforward as this code snippet:
 
