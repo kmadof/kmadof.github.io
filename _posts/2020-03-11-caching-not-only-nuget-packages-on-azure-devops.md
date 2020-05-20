@@ -7,7 +7,7 @@ tags: DevOps AzureDevOps nuget npm
 ---
 
 <div class="dark-message">
-  14/05/2020 - <a href="#caching-npm-modules">I added section about caching npm modules in Node.js/Angular project</a>
+  14 May 2020 - <a href="#caching-npm-modules">I added section about caching npm modules in Node.js/Angular project</a>
 </div>
 
 The goal of [Cache@2](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/cache?view=azure-devops) task is improving build performance by caching files between pipeline runs. It supports multiple types of packages like
