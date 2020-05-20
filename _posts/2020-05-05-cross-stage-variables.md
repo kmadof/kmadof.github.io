@@ -34,7 +34,7 @@ stages:
 
 <!--more-->
 
-In the task `DetermineResult` we set the variable `doThing` and mark it is as output `##vso[task.setvariable variable=doThing;isOutput=true]Yes` using [logging command syntax](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash). In the next job `JA_2` we used this variable as a part of condition `eq(dependencies.JA.outputs['DetermineResult.doThing'], 'Yes')` which checks if the variable is set to `Yes`. So far this construct was limited a single stage. But it changes ...
+In the task `DetermineResult` we set the variable `doThing` and mark it is as output `##vso[task.setvariable variable=doThing;isOutput=true]Yes` using [logging command syntax](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash). In the next job `JA_2` we used this variable as a part of condition `eq(dependencies.JA.outputs['DetermineResult.doThing'], 'Yes')` which checks if the variable is set to `Yes`. So far this construct was limited to a single stage. But it changes ...
 
 ### Cross stage variables
 
