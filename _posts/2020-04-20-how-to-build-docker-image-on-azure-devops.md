@@ -132,7 +132,7 @@ Looking at options how we can build Docker images on Azure DevOps I found a [Bui
 > - Pluggable architecture
 > - Execution without root privileges
 
-I recommend you read [this article](https://brianchristner.io/what-is-docker-buildkit/) which will give you general overview about Build Kit. But, to sum up, this is a software whch speed up bulding Docker images. We can enable [Build Kit on Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/build-image?view=azure-devops#buildkit) by setting DOCKER_BUILDKIT in the pipeline.
+I recommend you read [this article](https://brianchristner.io/what-is-docker-buildkit/) which will give you a general overview of Build Kit. But, to sum up, this is a software which speeds up building Docker images. We can enable [Build Kit on Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/build-image?view=azure-devops#buildkit) by setting DOCKER_BUILDKIT in the pipeline.
 
 {% highlight yml %}
 
