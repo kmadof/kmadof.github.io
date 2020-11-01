@@ -1,52 +1,69 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
-remote_theme:     https://github.com/fongandrew/hydeout/
-
-# Setup
-title:            The Code Manual
-tagline:          'Madej''s thoughts not only about coding'
-description:      'Madej''s thoughts not only about coding'
-url:              https://thecodemanual.pl
-baseurl:          
-                  # the optional subpath of your site, e.g. "/blog"
-                  # NB: This applies to all pages in your Jekyll site.
-                  # If you want to move just the blog index pages but keep
-                  # other pages at root, see the paginate_path and
-                  # sidebar_blog_link below.
-
+# Site setings
+name: 'The Code Manual'
+description: 'Make everything with code'
+meta_description: 'Blog about programming, DevOps and software architecture'
+logo:
+# Author image is used in site sidebar and greetings in the home page hero text
 author:
-  name:           'Krzysztof Madej'
-  url:            https://twitter.com/kmadof
+  image: 'kmadof.jpg'
+  greetings: "Hi there! I'm Krzysztof Madej and I work as .NET developer implementing Azure cloud based solutions and improving DevOps practices using Azure DevOps"
+favicon: 'assets/images/favicon.ico'
+baseurl: 
+production_url: https://thecodemanual.pl/
+disqus: 'thecodemanual'
+#mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
+# Add your GA Tracking Id
+ga_analytics: UA-88818077-1
 
-paginate:         5
-# paginate_path:    '/page:num'
-                    # Or '/blog/page:num' if you want to move your index pages
+# Contact form setings
+email: youremail@email.com
+contact_page_description: "Horace theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want."
+thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
-hydeout:
-  repo:            https://github.com/kmadof
+# Social links
+twitter: 'kmadof'
+#facebook: 'username'
+github: 'kmadof'
+#codepen: 'username'
+#dribbble: 'username'
+#medium: '@username'
+#instagram: 'username'
+#pinterest: 'username'
+linkedin: 'krzysztof-madej'
+#producthunt: '@username'
+#quora: 'username'
 
-linkedin:          https://www.linkedin.com/in/krzysztof-madej/
-twitter_link:      https://twitter.com/kmadof
+# Navigation
+navigation:
+  - text: Home
+    url: /
+  - text: About
+    url: /about
+  # - text: Style Guide
+  #   url: /style-guide
+  # - text: Contact Me
+  #   url: /contact
+  - text: Search
+    url: /search
 
-# Google services
-google_analytics: UA-88818077-1
-
-disqus:
-  shortname: thecodemanual
-
-plugins:
-  - jekyll-feed
-  - jekyll-gist
+# Required Plugins
+plugins_dir:
   - jekyll-paginate
-  - jekyll-twitter-plugin
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-gist
 
-# Sidebar link settings
-sidebar_home_link:  true
-# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
-                                # page. If you change your paginate_path,
-                                # set this to the root of the paginate_path
-                                # to enable a separate blog link.
-collections:
-  links:
-    output: true
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Permalinks
+permalink: /:year/:month/:day/:title
+
+# Other
+markdown: kramdown
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed

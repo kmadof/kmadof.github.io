@@ -4,6 +4,10 @@ title: How to build docker image on Azure DevOps?
 date: 2020-04-20
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps continuous-integration .NETCore Docker ACR
+featured_image_thumbnail:
+featured_image: /assets/images/posts/2020/frank-mckenna-tjX_sniNzgQ-unsplash.jpg
+featured: true
+hidden: true
 ---
 
 Nowadays with Kubernetes being so popular, building a Docker image is a must thing for CI/CD pipeline. For this kind of pipelines, an artifact is not a simple zip file wich compiled application, but a Docker image pushed to container registry. There is plenty of benefits of this approach but there is also price for this. We need to handle this in our pipelines. Hopefully, this price is not high. And we will explore today how we can build a Docker image for our dotnet core web app on Azure DevOps.
@@ -14,7 +18,7 @@ Nowadays with Kubernetes being so popular, building a Docker image is a must thi
 
 Our app is straightforward. It's nothing more than scaffolding provided by Visual Studio on creating dotnet core web app. So let's skip this part and move to DOCKERFILE. We use [multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) where in the first stage we use `mcr.microsoft.com/dotnet/core/sdk:3.1` image as our build environment to switch later to `mcr.microsoft.com/dotnet/core/aspnet:3.1` as our runtime, just to provide a minimal image.
 
-```
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 WORKDIR /app
 
@@ -94,7 +98,11 @@ This build took 55 seconds.
 
 Another approach is to use ACR tasks. But what is ACR task? [The codumentation](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#what-is-acr-tasks) explains this very well:
 
-> ACR Tasks is a suite of features within Azure Container Registry. It provides cloud-based container image building for platforms including Linux, Windows, and ARM, and can automate OS and framework patching for your Docker containers. ACR Tasks not only extends your "inner-loop" development cycle to the cloud with on-demand container image builds, but also enables automated builds triggered by source code updates, updates to a container's base image, or timers. For example, with base image update triggers, you can automate your OS and application framework patching workflow, maintaining secure environments while adhering to the principles of immutable containers.
+<div class="note-box">
+  <p>
+    ACR Tasks is a suite of features within Azure Container Registry. It provides cloud-based container image building for platforms including Linux, Windows, and ARM, and can automate OS and framework patching for your Docker containers. ACR Tasks not only extends your "inner-loop" development cycle to the cloud with on-demand container image builds, but also enables automated builds triggered by source code updates, updates to a container's base image, or timers. For example, with base image update triggers, you can automate your OS and application framework patching workflow, maintaining secure environments while adhering to the principles of immutable containers.
+  </p>
+</div>
 
 So basicly it will allow us to offload some part of CI steps to ACR. In our case it will be build and push docker image. You may wonder how much does cost. At the momen of writing this text it is $0.0001/second per CPU. 
 
@@ -119,18 +127,23 @@ This build took 94 seconds to create and publish the image. It is almost twice l
 
 Looking at options how we can build Docker images on Azure DevOps I found a [Build Kit](https://github.com/moby/buildkit) project. You may ask what it is. Let me cyte the offical site:
 
-> BuildKit is a toolkit for converting source code to build artifacts in an efficient, expressive and repeatable manner.
-> Key features:
-> - Automatic garbage collection
-> - Extendable frontend formats
-> - Concurrent dependency resolution
-> - Efficient instruction caching
-> - Build cache import/export
-> - Nested build job invocations
-> - Distributable workers
-> - Multiple output formats
-> - Pluggable architecture
-> - Execution without root privileges
+<div class="note-box">
+  <p>
+  BuildKit is a toolkit for converting source code to build artifacts in an efficient, expressive and repeatable manner.
+  Key features:
+    <ul>
+      <li>Automatic garbage collection</li>
+      <li>Extendable frontend formats</li>
+      <li>Concurrent dependency resolution</li>
+      <li>Efficient instruction caching</li>
+      <li>Nested build job invocations</li>
+      <li>Distributable workers</li>
+      <li>Multiple output formats</li>
+      <li>Pluggable architecture</li>
+      <li>Execution without root privileges</li>
+    </ul> 
+  </p>
+</div>
 
 I recommend you read [this article](https://brianchristner.io/what-is-docker-buildkit/) which will give you general overview about Build Kit. But, to sum up, this is a software whch speed up bulding Docker images. We can enable [Build Kit on Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/build-image?view=azure-devops#buildkit) by setting DOCKER_BUILDKIT in the pipeline.
 

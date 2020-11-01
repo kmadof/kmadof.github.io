@@ -4,11 +4,19 @@ title: Build templates on Azure DevOps
 date: 2020-04-02
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps continuous-integration .NETCore
+featured_image_thumbnail:
+featured_image: /assets/images/posts/2020/tim-arterbury-VkwRmha1_tI-unsplash.jpg
+featured: true
+hidden: true
 ---
 
 Last time we created [a gated check-in build for .NET Core app]({% post_url 2020-03-26-gated-check-in-build-on-azure-devops-for-dotnet-core-app %}). It works very well, but we did there one thing which is in general a bad practice in our proficiency. We duplicated build steps for building and testing .NET Core app. We can do better than that, we can use [templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops). Following the documentation:
 
-> Templates let you define reusable content, logic, and parameters. Templates function in two ways. You can insert reusable content with a template or you can use a template to control what is allowed in a pipeline.
+<div class="note-box">
+  <p>
+    Templates let you define reusable content, logic, and parameters. Templates function in two ways. You can insert reusable content with a template or you can use a template to control what is allowed in a pipeline.
+  </p>
+</div>
 
 We will do both things.
 <!--more-->

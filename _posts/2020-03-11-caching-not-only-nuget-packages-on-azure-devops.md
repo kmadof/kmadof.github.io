@@ -6,7 +6,7 @@ excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps nuget npm
 ---
 
-<div class="dark-message">
+<div class="message-box">
   14 May 2020 - <a href="#caching-npm-modules">I added section about caching npm modules in Node.js/Angular project</a>
 </div>
 
@@ -231,11 +231,17 @@ My angular project is located in the `cache-npm` subfolder and this is wahy I ha
 
 You may notice that we use `npm ci` command instead of typical `npm install`. There is a significant difference between these two. `npm install` asks bout each module from dependencies and then it upgrades or not. `npm ci` deletes all node_modules directory and copies them from the cache. Thus you should avoid caching npm_modules directory and cache folder cache itself as we did above. There are a few key information (please check [documentation](https://docs.npmjs.com/cli/ci.html)) which you should know before you will use `npm ci`:
 
-> - The project must have an existing **package-lock.json** or **npm-shrinkwrap.json.**
-- If dependencies in the package lock do not match those in **package.json**, `npm ci` will exit with an error, instead of updating the package lock.
-- `npm ci` can only install entire projects at a time: individual dependencies cannot be added with this command.
-- If a **node_modules** is already present, it will be automatically removed before npm ci begins its install.
-- It will never write to **package.json** or any of the package-locks: installs are essentially frozen.
+<div class="note-box">
+<p>
+  <ul>
+    <li> The project must have an existing <b>package-lock.json</b> or <b>npm-shrinkwrap.json</b>. </li>
+    <li> If dependencies in the package lock do not match those in <b>package.json</b>, <i>npm ci</i> will exit with an error, instead of updating the package lock. </li>
+    <li> <i>npm ci</i> can only install entire projects at a time: individual dependencies cannot be added with this command. </li>
+    <li> If a <b>node_modules</b> is already present, it will be automatically removed before npm ci begins its install. </li>
+    <li> It will never write to <b>package.json</b> or any of the package-locks: installs are essentially frozen. </li>
+  </ul>
+</p>
+</div>
 
 What is important to remember?! `npm ci` is meant to use in automated environments as CI builds. It may speed up your build but details strongly dependents on how many modules do you have in your dependencies. It is more strict than `npm install` and thus may help us keeping consistency in our code. But if you want to add/remove/change a module `npm install` is your choice.
 

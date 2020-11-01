@@ -1,0 +1,58 @@
+---
+---
+
+/**
+ * Royce 1.2.0
+ * By Just Good Themes - https://justgoodthemes.com/
+ */
+
+/**
+ * Table of Contents
+ * ----------------------------------------------------------------------------
+ * 0. Reset
+ * 1. General
+ * 2. Structure
+ * 3. Site Header
+ * 4. Content
+ *   4.1 Posts and Pages
+ *   4.2 Comments
+ *   4.3 Paging Navigation
+ * 5. Site Footer
+ * 6. Media Queries
+*/
+
+// Imports
+@import "variables";
+@import "reset";
+@import "general";
+@import "structure";
+@import "header";
+@import "content";
+@import "footer";
+@import "search";
+@import "media-queries";
+
+.note-box {
+    border-left: 3px solid $color-accent;
+    background: $yellow;
+    padding: 3px 3px 3px 10px;
+    margin-bottom: 1em;
+
+    p {
+        margin: 0;
+    }
+}
+
+
+#sidebar-nav-so-flair {
+    flex-flow: column nowrap;
+    margin: 1rem 0 0 0;
+}
+
+#sidebar-nav-so-flair img {
+    margin: 0;
+}
+
+.site-nav-element {
+    margin: 1rem 0 1rem;
+}

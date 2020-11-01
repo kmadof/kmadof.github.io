@@ -132,19 +132,18 @@ Target.create "DeployDb" (fun _ ->
 
 Now if we want to deploy using Test publish profile we need to run:
 
-> fake build -e env=Test
+` fake build -e env=Test `
 
 and if we want to deploy only FsharpAdventureWorks database:
 
-> fake build -e db=FsharpAdventureWorks
+` fake build -e db=FsharpAdventureWorks `
 
 
 and in case when we want to deploy FsharpAdventureWorks database using Test profile:
 
-> fake build -e db=FsharpAdventureWorks -e env=Test
+` fake build -e db=FsharpAdventureWorks -e env=Test `
 
 To achieve that I made only small changes in code. We only read parameters given in command line and pass them to functions to properly execute targets. This shows, how powerful FAKE can be. The code is really expressive and easy to reason about. Another benefit is having the same approach on DEV and other environments. Having such consistency we can faster catch any potential deployment issue.
-
 
 ### Clean target ###
 

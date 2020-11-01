@@ -1,1 +1,0 @@
-[A Kubernetes-based microservices application on service mesh](https://github.com/vietnam-devs/coolstore-microservices)

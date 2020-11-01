@@ -4,9 +4,13 @@ title: Cross stage variables in Azure DevOps and where you can use it
 date: 2020-05-05
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps
+featured_image_thumbnail:
+featured_image: /assets/images/posts/2019/desk.jpg
+featured: true
+hidden: true
 ---
 
-<div class="dark-message">
+<div class="message-box">
   21 May 2020 - I specified where stageDependencies can be used and how.
 </div>
 
@@ -71,7 +75,11 @@ stages:
 
 If you try to run this build you may still get an error:
 
-> An error occurred while loading the YAML build pipeline. Unrecognized value: 'stageDependencies'. Located at position 4 within expression: eq(stageDependencies.A.JA.outputs['DetermineResult.doThing'], 'Yes'). For more help, refer to https://go.microsoft.com/fwlink/?linkid=842996
+<div class="note-box">
+  <p>
+    An error occurred while loading the YAML build pipeline. Unrecognized value: 'stageDependencies'. Located at position 4 within expression: eq(stageDependencies.A.JA.outputs['DetermineResult.doThing'], 'Yes'). For more help, refer to https://go.microsoft.com/fwlink/?linkid=842996
+  </p>  
+</div>
 
 You will get it because this is not available in condition at stage level. You can use `stageDependencies` in condition but at the job level. But not only there. Please check code below:
 

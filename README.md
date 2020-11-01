@@ -1,168 +1,121 @@
-# Hydeout
+# Royce Jekyll Theme v1.1.0
 
-Hydeout updates the original [Hyde](https://github.com/poole/hyde)
-theme for [Jekyll](http://jekyllrb.com) 3.x and adds new functionality.
+[Theme Live Demo](https://royce.netlify.com/)
 
-![Desktop](/_screenshots/1.png?raw=true)
-<img alt="Mobile home page" src="/_screenshots/2.png?raw=true" width="300px" />
-<img alt="Mobile post page" src="/_screenshots/3.png?raw=true" width="300px" />
+## Features
 
-### Usage
+* Mobile-ready
+* Contact form built-in 
+* Social icons built-in
+* Social sharing built-in
+* Mailchimp subscription form
+* Code Syntax Highlight with [Prism.js](https://prismjs.com/)
+* Support for Disqus comments
+* Simple Jekyll search [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 
-Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
-Add `gem "jekyll-theme-hydeout", "~> 3.4"` to your Gemfile and run
-`bundle install`.
+## Getting Started
 
-If you're installing on Github pages, you may also have to add
-`remote_theme: fongandrew/hydeout` to your `_config.yml`. [See the Github
-instructions for more details.](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/)
+**Table of Contents**
 
-Hydeout uses pagination, so if you have an `index.md`, you'll need to swap
-it with an `index.html` that uses the `index` layout:
+* 1. Theme Configuration
+* 2. Contact form setings
+* 3. Social Links
+* 4. Site Navigation
+* 5. Images
+* 6. Local Installation
+* 7. Deployment
+* 8. Support
 
-```
----
-layout: index
-title: Home
----
-```
+### 1. Theme Configuration
 
-You'll also need to add a setting to `_config.yml` telling Jekyll how many posts
-to include per page (e.g. `paginate: 5`).
+The theme configuration options can be found within the **_config.yml** file. More information about Jekyll configuration can be found in the [Jekyll documentation](https://jekyllrb.com/docs/configuration/).
 
-### Keep It Simple
+* name - the title of your blog, shown in the page and description areas.
+* description - the description of your site for social meta tag, search engines, and feed.xml.
+* logo - the image for site logo.
+* author-image - the author profile image, shown in the sidebar/header intro section. The author image can be found in the royce/assets/images/authorimage.jpg location.
+* author-greetings - used in the home page for the text intro section.
+* favicon - the icon for your site.
+* baseurl - the subpath of your site, e.g. /blog, for generating urls. If baseurl is set, you will need to prepend the baseurl to these settings: author image, site navigation, post images.
+* production_url - the base hostname and protocol of your site for where absolute urls are needed.
+* disqus - your Disqus shortname. Enter the Disqus shortname here if you wish to have Disqus comments enabled, leave blank to disable comments.
+* mailchimp_url - your form action URL for MailChimp newsletter signup form.
 
-In keeping with the original Hyde theme, Hydeout aims to keep the overall
-design lightweight and plugin-free. JavaScript is currently limited only
-to Disqus and Google Analytics (and is only loaded if you provide configuration
-variables).
+### 2. Contact form setings
+To make contact form work make sure you have defined "email: youremail@email.com" in _config.yml file and verify your form on formspree.io.
 
-Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
-the CSS degrades into a single column layout.
+* email - email used for contact form.
+* contact_page_description: - description used in contact form page (contact.html).
+* thankyou_page_description - description used in thank you page (thank-you.html).
 
-### Customization
+### 3. Social Links
 
-Hydeout replaces Hyde's class-based theming with the use
-of the following SASS variables:
+To enable social links on your blog simply enter your social profile username, for example, twitter: "justgoodthemes" . If a field is left blank, the social icon will not be shown.
 
-```scss
-$sidebar-bg-color: #202020 !default;
-$sidebar-fg-color: white !default;
-$sidebar-sticky: true !default;
-$layout-reverse: false !default;
-$link-color: #268bd2 !default;
-```
+### 4. Site Navigation
 
-To override these variables, create your own `assets/css/main.scss` file.
-Define your own variables, then import in Hydeout's SCSS, like so:
+The site navigation can be found in the **_config.yml** file. To add a page to the site navigation simply add your new page in the markdown format (e.g. newpage.md) in the theme root folder. Next edit your navigation menu located in **_config.yml** file on line 37. To add a new item to the navigation you have to add the item name and url. For example:
 
-```scss
----
-# Jekyll needs front matter for SCSS files
----
+~~~~
+navigation:
+- text: New Page
+url: /newpage/
+~~~~
 
-$sidebar-bg-color: #ac4142;
-$link-color: #ac4142;
-$sidebar-sticky: false;
-@import "hydeout";
-```
+### 5. Images
 
-See the [_variables](_sass/hydeout/_variables.scss) file for other variables
-you can override.
+Images for pages are located in the royce/assets/images folder and images for posts are located in the royce/assets/images/posts directory.
 
-You can see the full set of partials you can replace in the
-[`_includes`](_includes) folder, but there are a few worth noting:
+#### Image With Caption
 
-* `_includes/copyright.html` - Insert your own copyright here.
+Within your blog posts you can include captions for images. This requires using some HTML markup.
 
-* `_includes/custom-head.html` - Insert custom head tags (e.g. to load your
-  own stylesheets)
+The example below illustrates how to include an image with a caption in a blog post:
 
-* `_includes/custom-foot.html` - Insert custom elements at the end of the
-  body (e.g. for custom JS)
+~~~~
+{% include image-caption.html imageurl="/images/posts/Apple-Watch-In-Car.jpg" 
+title="Apple Super" caption="supertest" %}
+~~~~
 
-* `_includes/custom-nav-links.html` - Additional nav links to insert at the
-  end of the list of links in the sidebar.
+Add the following code into your post/page markdown and change its attributes accordingly.
 
-  Pro-tip: The `nav`s in the sidebar are flexboxes. Use the `order` property
-  to order your links.
+#### Full Width Image With Caption
 
-* `_includes/custom-icon-links.html`- Additional icon links to insert at the
-  end of the icon links at the bottom of the sidebar. You can use the `order`
-  property to re-order.
+To have wide images in posts or pages simply add #wide word with the hashtag at the end of image path like in the example below:
 
-* `_includes/favicons.html` - Replace references to `favicon.ico` and
-  `favicon.png` with your own favicons references.
+~~~~
+{% include image-caption.html imageurl="/images/posts/Apple-Watch-In-Car.jpg#wide" 
+title="Apple" caption="This is caption" %}
+~~~~
 
-* `_includes/font-includes.html` - The Abril Fatface font used for the site
-  title is loaded here. If you're overriding that font in the CSS, be sure
-  to also remove the font load reference here.
+Add the following code into your post/page markdown and change its attributes accordingly.
 
-### New Features
+### 6. Local Instalation
 
-* Hydeout adds a new tags page (accessible in the sidebar). Just create a
-  new page with the tags layout:
+To set up Jekyll on local machine please follow the official documentation that can be found here -> https://jekyllrb.com/docs/.
 
-  ```
-  ---
-  layout: tags
-  title: Tags
-  ---
-  ```
+### 7. Deployment
 
-* Hydeout adds a new "category" layout for dedicated category pages.
-  Category pages are automatically added to the sidebar. All other pages
-  must have `sidebar_link: true` in their front matter to show up in
-  the sidebar. To create a category page, use the `category` layout"
+Sites built using Jekyll can be deployed in a large number of ways due to the static nature of the generated output. Here are some of the most common ways:
 
-  ```
-  ---
-  layout: category
-  title: My Category
-  ---
+#### Manual Deployment
 
-  Description of "My Category"
-  ```
+Jekyll generates your static site to the **_site** directory by default. You can transfer the contents of this directory to almost any hosting provider to get your site live. Here are some manual ways of achieving this:
 
-* You can control how pages are sorted by using the `sidebar_sort_order`
-  parameter in the front matter. This works for both category and non-category
-  pages, although non-category pages will always come first. Take a look at
-  [`_includes/sidebar-nav-links.html`](./_includes/sidebar-nav-links.html) if
-  you want to customize this behavior.
+##### Netlify
 
-  ```
-  ---
-  layout: page
-  title: My page
-  sidebar_sort_order: 123
-  ---
+This theme is prepared to be hosted on [Netlify](https://www.netlify.com/). All you need to do is create a new private repository on GitHub or GitLab. Upload the theme to the repository and link your repo to Netlify. Please check [this link](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/#step-2-link-to-your-github) with the step by step guidelines.
 
-  Some content.
-  ```
+##### FTP
 
-* A simple redirect-to-Google search is available. Just create a page with
-  the `search` layout.
+Most traditional web hosting providers let you upload files to their servers over FTP. To upload a Jekyll site to a web host using FTP, run the jekyll build command and copy the contents of the generated **_site** folder to the root folder of your hosting account. This is most likely to be the httpdocs or public_html folder on most hosting providers.
 
-  ```
-  ---
-  layout: search
-  title: Google Search
-  ---
-  ```
+##### Amazon S3
 
-* Disqus integration is ready out of the box. Just add the following to
-  your config file:
+If you want to host your site on Amazon S3, you can do so by using the [s3_website application](https://github.com/laurilehmijoki/s3_website). It will push your site to Amazon S3 where it can be served like any web server, dynamically scaling to almost unlimited traffic.
 
-  ```yaml
-  disqus:
-    shortname: my-disqus-shortname
-  ```
+### 8. Support
 
-  If you don't want Disqus or want to use something else, override
-  `comments.html`.
+The documentation included provides all the information you need to get started with the theme. However, if you have any questions you can email us at support@justgoodthemes.com, and we will be happy to help you.
 
-* For Google Analytics support, define a `google_analytics` variable with
-  your property ID in your config file.
-
-There's also a bunch of minor tweaks and adjustments throughout the
-theme. Hope this works for you!
+*Also, if you have any bug reports, or feature requests, please let us know!*
