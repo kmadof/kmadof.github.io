@@ -7,7 +7,7 @@ logo:
 author:
   image: 'kmadof.jpg'
   greetings: "Hi there! I'm Krzysztof Madej and I work as .NET developer implementing Azure cloud based solutions and improving DevOps practices using Azure DevOps"
-favicon: 'assets/images/favicon.ico'
+favicon: 'assets/images/favicon.png'
 baseurl: 
 production_url: https://thecodemanual.pl/
 disqus: 'thecodemanual'
