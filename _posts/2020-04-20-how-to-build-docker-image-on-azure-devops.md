@@ -8,6 +8,7 @@ featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/frank-mckenna-tjX_sniNzgQ-unsplash.jpg
 featured: true
 hidden: true
+og_image: /assets/images/posts/2020/how-to-build-docker-image-on-azure-devops/og-image.png
 ---
 
 Nowadays with Kubernetes being so popular, building a Docker image is a must thing for CI/CD pipeline. For this kind of pipelines, an artifact is not a simple zip file wich compiled application, but a Docker image pushed to container registry. There is plenty of benefits of this approach but there is also price for this. We need to handle this in our pipelines. Hopefully, this price is not high. And we will explore today how we can build a Docker image for our dotnet core web app on Azure DevOps.

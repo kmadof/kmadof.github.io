@@ -4,6 +4,7 @@ title: Caching (not only) NuGet packages on Azure DevOps
 date: 2020-03-11
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps nuget npm
+og_image: /assets/images/posts/2020/caching-not-only-nuget-packages-on-azure-devops/og-image.png
 ---
 
 <div class="message-box">

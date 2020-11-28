@@ -4,6 +4,7 @@ title: DB deployments with Fake.Sql.SqlPackage
 date: 2019-12-23
 excerpt_separator:  <!--more-->
 tags: DB FAKE-tool
+og_image: /assets/images/posts/2019/db-deployments-with-fake-sql-sqlpackage/og-image.png
 ---
 
 In my previous [post]({% post_url 2019-12-14-DB-deployments-with-FAKE-tool %}), I presented how we can deploy multiple visual studio database projects using [Fake build](https://fake.build/) tool. Here, I will present another option which is possible with version [5.19.0](https://github.com/fsharp/FAKE/releases/tag/5.19.0).

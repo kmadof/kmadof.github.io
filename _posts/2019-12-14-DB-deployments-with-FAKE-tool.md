@@ -4,6 +4,7 @@ title: DB deployments with FAKE tool
 date: 2019-12-14
 excerpt_separator:  <!--more-->
 tags: DB FAKE-tool
+og_image: /assets/images/posts/2019/db-deployments-with-fake-tool/og-image.png
 ---
 
 This story has begun quite long ago. I got a chance to work on projects without the automatic deployment process. It was strange a bit because we had deployments process for both front-end and back-end projects, but not for databases. For databases, we were generating SQL scripts from Visual Studio, and then we executed them in our Test environment. This was a perfect place to save our time and [FAKE](https://fake.build/) did the right job here.

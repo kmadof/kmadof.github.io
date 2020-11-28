@@ -4,6 +4,7 @@ title: Peopleware&#58; Productive Projects and Teams
 date: 2018-12-18
 excerpt_separator:  <!--more-->
 tags: book-review leadership
+og_image: /assets/images/posts/2018/peopleware-productive-projects-and-teams/og-image.png
 ---
 
 It is always a funny feeling when you read a book published at the year when you were born. And it means that the book is 31 years old. Why did I decide to reach for ["Peopleware: Productive Projects and Teams" by Tom DeMarco and Tim Lister](https://www.amazon.com/Peopleware-Productive-Projects-Teams-3rd/dp/0321934113/ref=sr_1_1?ie=UTF8&qid=1545065402&sr=8-1&keywords=peopleware)? There were two things. The first was 4.6 out of 5 starts and 201 reviews on Amazon. And the second was Joel Spolsky (Co-founder of Stack Overflow) opinion:

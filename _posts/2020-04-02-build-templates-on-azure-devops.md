@@ -8,6 +8,7 @@ featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/tim-arterbury-VkwRmha1_tI-unsplash.jpg
 featured: true
 hidden: true
+og_image: /assets/images/posts/2020/build-templates-on-azure-devops/og-image.png
 ---
 
 Last time we created [a gated check-in build for .NET Core app]({% post_url 2020-03-26-gated-check-in-build-on-azure-devops-for-dotnet-core-app %}). It works very well, but we did there one thing which is in general a bad practice in our proficiency. We duplicated build steps for building and testing .NET Core app. We can do better than that, we can use [templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops). Following the documentation:

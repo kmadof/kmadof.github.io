@@ -4,6 +4,7 @@ title: Gated check-in build on Azure DevOps for .NET Core app
 date: 2020-03-26
 excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps continuous-integration .NETCore
+og_image: /assets/images/posts/2020/gated-check-in-build-on-azure-devops-for-dotnet-core-app/og-image.png
 ---
 
 Standard CI build checks integrity of committed code after merge. This approach can lead to a state when code is not deployable due to failing tests or even failing compilation. Gated check-in helps to protect the integrity by verifying state before the merge. In that way, you can protect your master branch and avoid build breaks. In that way, you can ensure that your master branch is always deployable (what is crucial in GitHub flow) and you will not interrupt your colleagues with your obvious mistakes. Gated check-in feature was originally introduced in TFS 2010. It can also be easily adopted in Azure DevOps YAML based builds.

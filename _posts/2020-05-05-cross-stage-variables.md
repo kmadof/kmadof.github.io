@@ -8,6 +8,7 @@ featured_image_thumbnail:
 featured_image: /assets/images/posts/2019/desk.jpg
 featured: true
 hidden: true
+og_image: /assets/images/posts/2020/cross-stage-variables/og-image.png
 ---
 
 <div class="message-box">
