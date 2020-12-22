@@ -6,8 +6,8 @@ excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps continuous-integration .NETCore
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/tim-arterbury-VkwRmha1_tI-unsplash.jpg
-featured: true
-hidden: true
+featured: false
+hidden: false
 og_image: /assets/images/posts/2020/build-templates-on-azure-devops/og-image.png
 ---
 

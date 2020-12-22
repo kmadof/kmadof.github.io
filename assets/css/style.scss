@@ -56,3 +56,34 @@
 .site-nav-element {
     margin: 1rem 0 1rem;
 }
+
+#image-container {
+    text-align: center;
+
+    figure {
+        display: inline-block;
+    }
+    figcaption {
+        margin: 10px 0 0 0;
+        font-variant: small-caps;
+        font-family: Arial;
+        font-weight: bold;
+        color: $color-accent;
+    }
+    figure {
+        padding: 5px;
+    }
+    img:hover {
+        transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    img {
+        transition: transform 0.2s;
+        -webkit-transition: -webkit-transform 0.2s;
+        -moz-transition: -moz-transform 0.2s;
+        -o-transition: -o-transform 0.2s;
+    }
+}
