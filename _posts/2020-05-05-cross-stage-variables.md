@@ -10,7 +10,7 @@ tags: DevOps AzureDevOps
   21 May 2020 - I specified where stageDependencies can be used and how.
 </div>
 
-When you create a build pipeline you must sometime decide at runtime whether run some code or not. One of the options for this is output variables. It enables you to set a variable in one job and use this variable in the next job. In YAML we will write this in that way:
+When you create a build pipeline you must sometime decide at runtime whether run some code or not. One of the options for this is output variables. It enables you to set a variable in one job and use it in the next job. In YAML we will write this in that way:
 
 ```yaml
 stages:
