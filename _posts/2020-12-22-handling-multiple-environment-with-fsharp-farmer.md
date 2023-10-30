@@ -6,8 +6,8 @@ excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps FSharp Farmer Infrastracture-Pipeline
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/deploying-farmer-template-from-azure-devops/feature.jpg
-featured: true
-hidden: true
+featured: false
+hidden: false
 ---
 
 [Farmer][1] is a F# way of creating Azure infrastracture. It wraps ARM templates which are difficult to read and contains reduntant code (if we may call json in that way :)). It also gives a chance for FSharp ecosystem to stay within, which is super handy.

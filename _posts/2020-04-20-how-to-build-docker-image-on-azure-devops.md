@@ -6,8 +6,8 @@ excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps continuous-integration .NETCore Docker ACR
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2020/frank-mckenna-tjX_sniNzgQ-unsplash.jpg
-featured: true
-hidden: true
+featured: false
+hidden: false
 og_image: /assets/images/posts/2020/how-to-build-docker-image-on-azure-devops/og-image.png
 ---
 

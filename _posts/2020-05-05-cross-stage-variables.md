@@ -6,8 +6,8 @@ excerpt_separator:  <!--more-->
 tags: DevOps AzureDevOps
 featured_image_thumbnail:
 featured_image: /assets/images/posts/2019/desk.jpg
-featured: true
-hidden: true
+featured: false
+hidden: false
 og_image: /assets/images/posts/2020/cross-stage-variables/og-image.png
 ---
 

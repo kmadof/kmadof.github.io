@@ -1,12 +1,12 @@
 # Site setings
 name: 'The Code Manual'
 description: 'Make everything with code'
-meta_description: 'Blog about programming, DevOps and software architecture'
+meta_description: 'Blog about Azure, DevOps and software architecture'
 logo:
 # Author image is used in site sidebar and greetings in the home page hero text
 author:
   image: 'kmadof.jpg'
-  greetings: "Hi there! I'm Krzysztof Madej and I work as .NET developer implementing Azure cloud based solutions and improving DevOps practices using Azure DevOps"
+  greetings: "DevOps engineer passionate about Azure, Azure DevOps & GitHub Actions. Stack Overflow addict, dedicated to assisting others."
 favicon: 'assets/images/favicon.png'
 baseurl: 
 production_url: https://thecodemanual.pl/
